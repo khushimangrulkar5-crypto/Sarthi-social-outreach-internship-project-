@@ -1,6 +1,83 @@
 #include <BluetoothSerial.h>
+/*
+  BluetoothSerial.h Library
+
+  Purpose:
+  - Enables Bluetooth Classic (Serial Port Profile - SPP) communication
+    on the ESP32.
+  - Allows wireless serial communication between the ESP32 and
+    smartphones, laptops, or other Bluetooth-enabled devices.
+
+  Features:
+  - Send and receive data wirelessly.
+  - Works like the Serial Monitor but over Bluetooth.
+  - Supports text, numbers, and commands.
+
+  Common Functions:
+  - begin("Device_Name") : Starts Bluetooth with a device name.
+  - available()          : Checks if data is available.
+  - read()               : Reads incoming data.
+  - write()              : Sends raw data.
+  - print()/println()    : Sends text or values.
+
+  Note:
+  - BluetoothSerial.h is supported only on ESP32 boards.
+  - Used for Bluetooth Classic (SPP), not Bluetooth Low Energy (BLE).
+*/
 #include <HardwareSerial.h>
+/*
+  HardwareSerial.h Library
+
+  Purpose:
+  - Provides access to the ESP32's hardware UART (serial) ports.
+  - Used for serial communication with external devices such as
+    GPS modules, GSM modules, Bluetooth modules, barcode scanners,
+    and other microcontrollers.
+
+  ESP32 UARTs:
+  - Serial  -> UART0 (USB programming and Serial Monitor)
+  - Serial1 -> UART1
+  - Serial2 -> UART2
+
+  Common Functions:
+  - begin()      : Starts serial communication.
+  - available()  : Checks if data has been received.
+  - read()       : Reads one byte of incoming data.
+  - write()      : Sends raw data.
+  - print() / println() : Sends text or values.
+
+  Note:
+  - Not required for digital sensors like IR obstacle sensors.
+  - Use it only when communicating with UART-based devices.
+*/
 #include <DFRobotDFPlayerMini.h>
+/*
+  DFRobotDFPlayerMini.h Library
+
+  Purpose:
+  - Controls the DFPlayer Mini MP3 module using UART serial communication.
+  - Allows the ESP32 to play audio files stored on a microSD card.
+
+  Features:
+  - Play, pause, stop, next, and previous tracks.
+  - Set volume and equalizer (EQ).
+  - Play specific tracks or folders.
+  - Check the player's status and receive error messages.
+
+  Common Functions:
+  - begin()           : Initializes the DFPlayer Mini.
+  - play(trackNo)     : Plays the specified track.
+  - pause()           : Pauses playback.
+  - stop()            : Stops playback.
+  - next()            : Plays the next track.
+  - previous()        : Plays the previous track.
+  - volume(level)     : Sets the volume (0–30).
+
+  Note:
+  - Requires UART communication (HardwareSerial.h).
+  - Audio files must be stored on a properly formatted microSD card.
+  - Commonly used in voice assistants, talking robots, alarms, and music playback projects.
+*/
 
 BluetoothSerial SerialBT;
 
